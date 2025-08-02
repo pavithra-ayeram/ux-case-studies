@@ -177,7 +177,6 @@ ul {
   flex-direction: column;
   position: relative;
   margin-left: 70px;
-  padding-left: 22px;
   margin-bottom: 25px;
   transition: all 600ms ease-in-out;
 }
@@ -225,7 +224,6 @@ ul {
 .ux-heading {
   font-size: 20px;
   font-weight: 600;
-  margin-left: 10px;
   color: #333;
   display: inline-block;
   position: relative;

@@ -1,0 +1,279 @@
+/* General Styles */
+:root {
+  --primary-color: #5B2C35;
+  --light-red: #A26769;
+  --accent-color: #BD8C67;
+  --bg-color: #F1ECE9;
+  --text-color: #181818;
+  --muted-text: #C3B9BB;
+  --highlight-bg: #a267699c;
+  --highlight-border: #a26769d4;
+  --swatch-shadow: rgba(0, 0, 0, 0.15);
+  --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-family: 'EB Garamond', serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 16px;
+    text-align: center;
+}
+
+header h1 {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--accent-color);
+}
+
+section {
+  max-width: 1000px;
+  margin: 48px auto;
+  padding: 0 24px;
+}
+
+section h2 {
+  font-size: 32px;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+section h3 {
+  font-size: 24px;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+hr {
+  border: none;
+  height: 3px;
+  background: var(--primary-color);
+  width: 50px;
+  margin-bottom: 24px;
+  margin-top: 0px;
+}
+
+blockquote.notion-quote {
+  font-style: italic;
+  color: var(--text-color);
+  border-left: 4px solid var(--primary-color);
+  padding: 16px;
+  margin: 16px 0;
+  background-color: var(--highlight-bg);
+  border-radius: 5px;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 24px;
+}
+
+/* Visual Design Section */
+.visual-design .section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  gap: 32px;
+  flex-wrap: nowrap;
+}
+
+.visual-design .section:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.visual-design .image {
+  flex: 1 1 55%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visual-design .image::before {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 120%;
+  background: var(--accent-color);
+  border-radius: 40% 60% 60% 40% / 50% 50% 50% 50%;
+  z-index: 0;
+  transform: rotate(-15deg);
+}
+
+.visual-design .image img {
+  width: 75%;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px var(--card-shadow);
+  position: relative;
+  z-index: 1;
+}
+
+.visual-design .text {
+  flex: 1 1 50%;
+  padding: 16px;
+}
+
+/* Color Swatches */
+.palette .color-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+  min-height: 200px;
+}
+
+.swatch {
+  padding: 16px 24px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 2px 8px var(--swatch-shadow);
+}
+
+/* Typography */
+.font-sample {
+    margin-bottom: 20px;
+}
+
+.eb-garamond {
+    font-family: 'EB Garamond', serif;
+    font-size: 32px;
+}
+
+.garamond-light {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+/* UX Process Timeline */
+.ux-process-wrapper {
+  padding: 20px;
+}
+
+.ux-step {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: 70px;
+  margin-bottom: 25px;
+  transition: all 600ms ease-in-out;
+}
+
+.ux-step::before {
+  content: "";
+  position: absolute;
+  left: -27px;
+  top: 40px;
+  width: 6px;
+  height: 100%;
+  background-color: var(--primary-color);
+  z-index: 0;
+}
+
+.ux-step:last-child::before {
+  display: none;
+}
+
+.ux-circle {
+  position: absolute;
+  left: -45px;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.ux-card {
+  margin-left: 10px;
+  padding: 20px;
+  padding-top: 5px;
+  border-radius: 10px;
+  transition: all 600ms ease;
+  overflow: hidden;
+}
+
+.ux-heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.ux-content {
+  margin-top: 10px;
+  padding: 0 20px;
+  border-radius: 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1000ms ease, opacity 500ms ease-in-out;
+  opacity: 0;
+}
+
+.ux-card:hover {
+  background-color: #fff;
+  box-shadow: 0 4px 8px var(--card-shadow);
+  padding: 20px;
+}
+
+.ux-card:hover .ux-content {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.ux-card:hover .ux-heading {
+  color: var(--primary-color);
+}
+
+/* Lists in Final Design and Outcomes */
+.final-design ul,
+.outcomes ul {
+    list-style-type: square;
+    padding-left: 24px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .visual-design .section,
+  .visual-design .section:nth-child(even) {
+    flex-direction: column;
+  }
+
+  header h1 {
+    font-size: 40px;
+  }
+
+  section h2 {
+    font-size: 28px;
+  }
+
+  .visual-design .image img {
+    width: 100%;
+  }
+}

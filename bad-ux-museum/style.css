@@ -1,15 +1,20 @@
 /* General Styles */
 :root {
-  --primary-color: #5B2C35;
-  --light-red: #A26769;
-  --accent-color: #BD8C67;
-  --bg-color: #F1ECE9;
-  --text-color: #181818;
-  --muted-text: #C3B9BB;
-  --highlight-bg: #a267699c;
-  --highlight-border: #a26769d4;
-  --swatch-shadow: rgba(0, 0, 0, 0.15);
-  --card-shadow: rgba(0, 0, 0, 0.1);
+  --primary-color: #1F1F1F;        /* Ink - main text / headings */
+  --secondary-color: #7AA58A;      /* Sage - subtle accent */
+  --accent-color: #C07A5A;         /* Terracotta - highlight */
+  
+  --bg-color: #F5F3EF;             /* Card / background */
+  --surface-color: #FFFFFF;        /* Cards / hover states */
+  
+  --text-color: #1F1F1F;           
+  --muted-text: #8E8783;           
+  
+  --highlight-bg: #EFEAE4;         /* soft highlight */
+  --highlight-border: #7AA58A;     
+  
+  --swatch-shadow: rgba(0, 0, 0, 0.08);
+  --card-shadow: rgba(0, 0, 0, 0.08);
 }
 
 body {
@@ -22,10 +27,11 @@ body {
 }
 
 header {
-    background-color: var(--primary-color);
-    color: #fff;
+    background-color: var(--surface-color);
+    color: var(--text-color);
     padding: 16px;
     text-align: center;
+    border-bottom: 1px solid #E5E2DC;
 }
 
 header h1 {
@@ -36,7 +42,7 @@ header h1 {
 .subtitle {
     font-size: 20px;
     font-weight: 300;
-    color: var(--accent-color);
+    color: var(--muted-text);
 }
 
 section {
@@ -47,9 +53,7 @@ section {
 
 section h2 {
   font-size: 32px;
-  color: var(--primary-color);
-  margin-bottom: 5px;
-  margin-top: 20px;
+  color: var(--text-color);
 }
 
 section h3 {
@@ -59,12 +63,9 @@ section h3 {
 }
 
 hr {
-  border: none;
-  height: 3px;
-  background: var(--primary-color);
-  width: 50px;
-  margin-bottom: 24px;
-  margin-top: 0px;
+  height: 2px;
+  background: var(--secondary-color);
+  width: 40px;
 }
 
 blockquote.notion-quote {
@@ -109,7 +110,7 @@ ul {
   position: absolute;
   width: 70%;
   height: 120%;
-  background: var(--accent-color);
+  background: #E8E3DC;
   border-radius: 40% 60% 60% 40% / 50% 50% 50% 50%;
   z-index: 0;
   transform: rotate(-15deg);
@@ -140,7 +141,7 @@ ul {
 .swatch {
   padding: 16px 24px;
   border-radius: 8px;
-  color: #fff;
+  color: #1F1F1F;
   font-weight: bold;
   box-shadow: 0 2px 8px var(--swatch-shadow);
 }
@@ -235,9 +236,8 @@ ul {
 }
 
 .ux-card:hover {
-  background-color: #fff;
-  box-shadow: 0 4px 8px var(--card-shadow);
-  padding: 20px;
+  background-color: var(--surface-color);
+  box-shadow: 0 6px 16px var(--card-shadow);
 }
 
 .ux-card:hover .ux-content {
